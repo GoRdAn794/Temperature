@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Temperature</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+	h1
+	{
+		text-align: center;
+		font-size: 50px;
+		font-family: "Times New Roman", Times, serif;
+	}
+	#sect
+	{
+		height: auto;
+		width: 100%;
+	}
+.tem
+{
+
+	background-image: url(https://images.pexels.com/photos/3873176/pexels-photo-3873176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+		height: 672px;
+		width: 100%;
+		padding-top: 100px;
+		background-size: cover;
+		background-repeat: no-repeat;
+}
+.row
+{
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+}
+</style>
+<body>
+	<section id="sect">
+	<div class="container-fluid tem">
+		<div>
+			<form>
+		<h1>Temperature Converter</h1>
+		<input type="number" placeholder="Celsius/Fahrenheit" id="inp" style="margin-left: 25%; margin-top: 5%;background-color:  #275458;">
+		<select id="selectbox">
+			<option value="1">Fahrenheit</option>
+			<option value="2">Celsius</option>
+		</select>
+		<div>
+		<button type="button" class="btn btn-outline-dark" onclick="tempt();" style="margin-left: 25%;margin-top: 5%;">CONVERT</button>
+		<button class="btn btn-outline-danger" type="button" value="clear" onclick="cl();" style="margin-left: 6%;margin-top: 5%;">RESET</button>
+		</div>
+		</form>
+	</div>
+	</div>
+</section>
+	<script>
+		 function tempt()
+		{
+			var x;
+			debugger;
+		x=document.getElementById("inp").value;
+		var sel=document.getElementById("selectbox");
+		var op=sel.options[sel.selectedIndex].value;
+		if(op=='1')
+		{
+			if(x == "")
+		{
+			alert("Please Enter a Value;")
+		}
+		else{
+				temp1=((9/5)*x)+32;
+			document.getElementById("inp").value=temp1;
+			console.log(temp1);
+		
+		}	
+		}
+		else if(op=='2')
+			{
+				if(x == "")
+		{
+			alert("Please Enter a Value")
+		}
+		else
+		{
+			
+			 	temp1=(x-32)*(5/9);
+			 	document.getElementById("inp").value=temp1;
+		}
+			
+			}
+
+
+		}
+		function cl()
+		{
+			x="";
+			document.getElementById("inp").value="";
+			
+		} 
+	</script>
+</body>
+</html>
